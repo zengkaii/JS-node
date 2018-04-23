@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>template string</title>
+</head>
+<body>
+    <p>
+            es6 更简洁，高效，优雅，面向未来
+
+
+    </p>
+    <ul id="dogs">
+        
+    </ul>
+    <script>
+        // 能用const 就用const
+        const name='曾凯';
+        const age=20;
+        const sentence=`My Friend ${name} is ${age} years old!Always`;//es6
+        console.log(sentence);
+        // 编译
+        // const sentence="My Friend"+name+"is"+age+"years old"//es5
+        const dogs=[
+
+            {name:'Snickers',age:2},
+            {name:'Hugo',age:8},
+            {name:'Sunny',age:1}
+    ];
+    // js 是弱类型语言，在变量前面第一个字母加类型描述，有利于代码正确性和可读性
+
+    // getOneDoghtml 返回单条狗的html
+    // params:dog 类型 json key{name age}
+    // return li 节点
+
+   
+    const oUL=document.querySelector('#dogs');
+    // for(let i=0;i<dogs.length;i++){
+    //     // // 创建li html标签可以通过js创建
+    //     // // 1 createElement 2 appendChild挂上去
+    //     // const oLi=document.createElement('li');
+    //     // const strDog=`${dogs[i].name} is ${dogs[i].age} years old!`
+    //     // oLi.appendChild(
+    //     //     document.createTextNode(strDog)
+    //     // );
+                // -------------------------------------------------------------
+    //     function getOneDoghtml(dog){
+    //     const oLi=document.createElement('li');
+    //     const strDog=`My dog ${dogs[i].name} is ${dogs[i].age} years old`;
+    //     oLi.appendChild(document.createTextNode(strDog));
+    //     return oLi;
+
+    // }
+    //     oUL.appendChild(getOneDoghtml(
+    //         dogs[i]
+    //     ));
+    // }
+    
+
+    //动态显示html DOM DHTML
+    // 字符串让html模板组装变得更加优雅。
+    // dogs =>多少个li
+    // for(){}
+    const markup=`
+
+    ${
+        dogs.map(dog => `
+        <li>
+            ${dog.name} is ${dog.age*7} years old
+        </li>
+        `).join('')
+    }
+        `
+    oUL.innerHTML=markup
+    </script>
+
+    
+</body>
+</html>
