@@ -1,0 +1,157 @@
+/*css reset*/
+/* *reset性能不好 */
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video{
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+
+html{
+    font-size: 10px !important;
+
+}
+body{
+    margin: 0;
+    background-color: #fbfbfb;
+    font-family: Helvetica,Arial,Roboto,PingFang SC,Microsoft Yahei,Hiragino Sans GB,sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+}
+#db-global-nav{
+    height: 28px;
+    color: #d5d5d5;
+    background-color: #545652;
+    min-width: 950px;
+    font: 12px Helvetica,Arial,sans-serif;
+    line-height: 1.62;
+    font-size: 12px;
+}
+#db-global-nav .global-nav-items{
+    font-size: 0;
+}
+#db-global-nav ul{
+    margin: 0;
+    padding: 0;
+}
+dl,ol,ul{
+    list-style: none;
+}
+/* inline-block有缺陷，
+ * 解决了行内块级的问题，但是在元素间会莫名产生一点像素的间距，影响算像素
+ * 两种解决方案 删除元素间的换行
+ * 将父元素的font-size设置为0
+ * 子元素 重新设定font-size
+ */
+#db-global-nav .global-nav-items li{
+    display: inline-block;
+    zoom: 1;
+    line-height: 28px;
+    font-size: 12px;
+    vertical-align: baseline;
+}
+/* 101 */
+#db-global-nav a{
+    cursor: pointer;
+    text-decoration: none;
+}
+/* 100+10+1=111 */
+#db-global-nav .global-nav-items a{
+    display: inline-block;
+    zoom: 1;
+    padding: 0 12px;
+    height: 28px;
+}
+#db-global-nav a:link,
+#db-global-nav a:visited, 
+#db-global-nav a:hover, 
+#db-global-nav a:active{
+    color: #d5d5d5;
+}
+#db-global-nav .top-nav-info{
+    float: right;
+    margin: 0 12px 0 0;
+    line-height: 28px;
+}
+#db-global-nav .top-nav-info a{
+    display: inline-block;
+    zoom: 1;
+    margin: 0;
+    padding: 0 12px;
+    height: 28px;
+}
+#db-global-nav .top-nav-doubanapp{
+    position: relative;
+    float: right;
+    margin-right: 5px;
+    line-height: 28px;
+}
+#db-global-nav .top-nav-doubanapp .more-items{
+    padding: 10px 20px 30px;
+    left: -76px;
+    width: 211px;
+    border-top: none;
+    color: #111;
+    font-size: 15px;
+    line-height: 1.62;
+    font-weight: bold;
+    text-align: center;
+    -webkit-font-smoothing:antialiased;
+    text-rendering: optimizeLegibility;
+}
+#db-global-nav .more-items{
+    /* display: none; */
+    position: absolute;
+    left: 0;
+}
+#db-global-nav .top-nav-doubanapp .more-items .appintro-title{
+    padding-top: 170px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: 400;
+    background: url("https://img3.doubanio.com/favicon.ico") no-repeat center;
+}
+#db-global-nav .top-nav-doubanapp .more-items .qrcode{
+    padding-top: 160px;
+    margin-top: 30px;
+    font-size: 0;
+    background: url("https://www.douban.com/doubanapp/redirect?channel=top-nav&direct_dl=1&download=iOS") no-repeat center;
+}
+#db-global-nav .top-nav-doubanapp .download{
+    margin-top: 10px;
+}
+#db-global-nav .top-nav-doubanapp .download a{
+    display: inline;
+    font-weight: normal;
+    font-size: 12px;
+    background: none;
+    padding: 0;
+}
+#db-global-nav #doubanapp-tip{
+    display: none;
+    position: absolute;
+    top:28px;
+    border: 1px solid;
+    padding: 0 30px 0 10px;
+    color: #13bc39;
+    background: #FFF;
+    z-index: 10;
+    white-space: nowrap;
+}
+#db-global-nav #doubanapp-tip .tip-link:link, #db-global-nav #doubanapp-tip .tip-link:visited, #db-global-nav #doubanapp-tip .tip-link:hover, #db-global-nav #doubanapp-tip .tip-link:active{
+    color: #13bc39;
+    background: #FFF;
+}
+#db-global-nav #doubanapp-tip .tip-close{
+    position: absolute;
+    right: 6px;
+    width: 15px;
+    height: 15px;
+    line-height: 26px;
+    text-align: center;
+}
