@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise es6 异步当家花旦</title>
+</head>
+<body>
+    <script>
+    
+    // console.log('开始了');
+    // fetch('https://wesbos.com/wp-json/wp/v2/posts')
+    // .then(function(res){
+    //     // console.log('A');
+    // });
+    
+    // fetch('https://data.ratp.fr/api/datasets/1.0/search/?q=paris')
+    // .then(function(res){
+    //     // console.log('B');
+    // })
+    // // 等到异步A和异步B发生之后，再执行
+    // // console.log('C');
+    // // 顺序执行 js 执行顺序不再同步
+    // // 异步 所以js代码的执行顺序得不到保证
+    // // A->B->C
+    // // 对未来会发生的事情
+    // // 将要耗时的事情，交给Promise吧
+    // // 解决reject 拒绝
+
+    // const p= new Promise((resolve,reject)=>{
+    //     setTimeout(()=>{
+    //         console.log('A');
+    //         // 数据存储mysql，读取文件，定时任务
+    //         // resolve();
+    //     //    resolve('A is over');
+    //     reject('失败的原因');
+            
+    //     },1000)
+    // });
+    // p.then((res)=>{
+    //     console.log(res);
+    //     console.log('C');
+    // }).catch(e=>{
+    //     // console.log('不好意思');
+    //     console.log(e);
+    // })
+    
+    // B
+    // A 长 => C(A)
+    // 强制代码的执行顺序，让它可以同步执行
+
+    // fetch 执行后返回的一个promise
+    // 两件异步事 ，发生不确定时间 Promise
+    const postsPromise=fetch('https://wesbos.com/wp-json/wp/v2/posts');
+    const streetCarsPromise=fetch('https://data.ratp.fr/api/datasets/1.0/search/?q=paris')
+    // js不会为异步停留
+    // 最晚那个执行完，A,B结果，再执行C
+    // console.log('C');
+    Promise.all([postsPromise,streetCarsPromise])
+    .then(responses=>{
+        console.log(responses);
+        return Promise.all(responses.map(
+            res=>res.json()
+        ))
+    })
+    .then(responses=>{
+        console.log(responses);
+    })
+    </script>
+</body>
+</html>

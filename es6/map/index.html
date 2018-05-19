@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Maps</title>
+</head>
+<body>
+    <button >Snakes</button>
+    <button >Cry</button>
+    <button >Ice Cream</button>
+    <button >Flamin</button>
+    <button >Dancer</button>
+    <script>
+    // 五个按钮，分别统计点按钮的次数
+    // Map 对象集合 key 类型也可以是一个对象
+    const clickCounts =new Map();
+    //json 跟map 区别？ key 以上 
+    const buttons =document.querySelectorAll('button');
+    buttons.forEach(button =>{
+        clickCounts.set(button,0);
+        button.addEventListener('click',function(){
+            const val =clickCounts.get(this);
+            clickCounts.set(this ,val +1);
+            // console.log(this.innerHTML);
+            console.log(clickCounts);
+            //箭头this 指向一定是它上一级this指向
+        })
+    })
+    
+    </script>
+</body>
+</html>
