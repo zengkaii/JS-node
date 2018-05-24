@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>解码登录</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="lock-hd">
+            <p>请输入密码</p>
+        </div>
+        <div class="lock-bd">
+            <div class="lock-circle">
+                <span><a href="#">1</a></span>
+                <span><a href="#">2</a></span>
+                <span><a href="#">3</a></span>
+                <span><a href="#">4</a></span>
+                <span><a href="#">5</a></span>
+                <span><a href="#">6</a></span>
+                <span><a href="#">7</a></span>
+                <span><a href="#">8</a></span>
+                <span><a href="#">9</a></span>
+                <span><a href="#">0</a></span>
+            </div>      
+        </div>
+        <div class="lock-ft">
+            <div class="lock-ft-left"><a href="#">紧急呼叫</a></div>
+            <div class="lock-ft-right"><a href="#">取消</a></div>
+        </div>
+    </div>
+    <script>
+            //所有css之前，我们先来决定html font-size应该是多少？1rem=设备宽度/10
+            (function(w){
+                // 找到html
+                // window是全局
+                let s=w.document;
+                //dom树
+                let html =s.documentElement;
+                // clientWidth 设备宽度
+                let colWidth=html.clientWidth/10;
+                html.style.fontSize=colWidth+'px';
+            })(window)
+            </script>
+</body>
+</html>
