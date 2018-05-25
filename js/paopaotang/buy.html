@@ -54,22 +54,23 @@
               const selectnumber=Number.value;
               getNumber.innerHTML=selectnumber;
             //   console.log(blues)
-              if(Color.value==='红色'&&Number.value<phone.red){
+              if(Color.value==='红色'&&Number.value<=phone.red){
                   Sub.disabled=false;
                   Sub.innerHTML='放入购物车';
               }else if(Color.value==='红色'&&Number.value>phone.red){
                 Sub.disabled=true;
                   Sub.innerHTML='库存不足';
-              }if(Color.value==='蓝色'&&Number.value<phone.blue){
+              }if(Color.value==='蓝色'&&Number.value<=phone.blue&&!Number.value==''){
                   Sub.disabled=false;
                   Sub.innerHTML='放入购物车';
               }else if(Color.value==='蓝色'&&Number.value>phone.blue){
                  Sub.disabled=true;
                   Sub.innerHTML='库存不足';
               }
-              else if(Number.value==''){
+              else if(Number.value===''){
                   Sub.disabled=true;
                   Sub.innerHTML='请输入商品数量';
+                  c
               }
           }
         //   function numberresult(e){
