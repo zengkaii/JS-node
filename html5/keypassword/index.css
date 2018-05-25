@@ -53,7 +53,7 @@ body{
 .lock-ft-left{
     display:inline-block;
     margin-left:0.30120481rem;
-    width: 1.80722891rem;
+    /* width: 1.80722891rem; */
 }
 .lock-ft-right{
     float: right;
