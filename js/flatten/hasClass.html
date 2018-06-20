@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box active huge_box"></div>
+    <!-- <script src="https://cdn.bootcss.com/jquery/2.0.1/jquery.min.js"></script> -->
+
+    <script>
+    
+    const box =document.querySelector('.box')
+    // console.log(box.classList.contains('active'));
+    // $(function(){
+    //     if($(".box").hasClass('active')){
+    //         alert('有这个类')
+    //     }
+    // })
+    // console.log($(".box").hasClass('active'));
+
+    // $结束符 | 选择从哪侧开始或者结束
+    // const box =document.querySelector('.box').className;
+    // const cls = 'active';
+    // const reg = new RegExp('^|\\s'+cls+'\\s|$');
+    // console.log( reg.test(box));
+   
+    const cls = 'active';
+   function hasClass(ele,cls){
+       const reg = new RegExp('^|\\s'+cls+'\\s|$');
+       return reg.test(ele.className);
+   }
+   function removeClass(ele,cls){
+      
+
+   }
+
+    </script>
+</body>
+</html>
